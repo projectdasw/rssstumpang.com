@@ -1,5 +1,5 @@
-# Translation of WordPress - 6.7.x - Development - Administration - Network Admin in Indonesian
-# This file is distributed under the same license as the WordPress - 6.7.x - Development - Administration - Network Admin package.
+# Translation of WordPress - 6.8.x - Development - Administration - Network Admin in Indonesian
+# This file is distributed under the same license as the WordPress - 6.8.x - Development - Administration - Network Admin package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2024-09-21 15:44:24+0000\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: GlotPress/4.0.1\n"
 "Language: id\n"
-"Project-Id-Version: WordPress - 6.7.x - Development - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 6.8.x - Development - Administration - Network Admin\n"
 
 #: wp-admin/network/upgrade.php:32
 msgid "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/admin/#network-admin-updates-screen\">Documentation on Upgrade Network</a>"
@@ -106,12 +106,12 @@ msgid "You should back up your existing %1$s and %2$s files."
 msgstr "Anda harus mencadangkan berkas %1$s dan %2$s yang ada."
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:738
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:744
 msgid "Visit theme site for %s"
 msgstr "Kunjungi tema situs untuk %s"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:751
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:757
 msgid "Child theme of %s"
 msgstr "Tema anak dari %s"
 
@@ -248,7 +248,7 @@ msgstr "Instalasi sub-domain"
 msgid "Sub-directory Installation"
 msgstr "Instalasi sub-direktori"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:944
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:950
 msgid "Active Child Theme"
 msgstr "Tema Anak Aktif"
 
@@ -391,7 +391,7 @@ msgctxt "user"
 msgid "Mark as spam"
 msgstr "Tandai sebagai spam"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:744
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:750
 msgid "Visit Theme Site"
 msgstr "Kunjungi Situs Tema"
 
@@ -527,7 +527,7 @@ msgstr "Spam"
 msgid "Archived"
 msgstr "Diarsipkan"
 
-#: wp-admin/network/site-users.php:373 wp-admin/network/user-new.php:149
+#: wp-admin/network/site-users.php:376 wp-admin/network/user-new.php:149
 msgid "A password reset link will be sent to the user via email."
 msgstr "Tautan reset password akan dikirimkan ke pengguna via email"
 
@@ -786,7 +786,7 @@ msgstr "Selamat datang di Admin Jaringan. Area Layar Administrasi ini digunakan 
 msgid "Only use this screen once you have updated to a new version of WordPress through Updates/Available Updates (via the Network Administration navigation menu or the Toolbar). Clicking the Upgrade Network button will step through each site in the network, five at a time, and make sure any database updates are applied."
 msgstr "Hanya gunakan laman ini ketika ingin memperbarui WordPress ke versi terbaru melalui Pembaruan/Pembaruan Tersedia (via menu navigasi Administrasi Jaringan atau dari Baris Perkakas). Klik tombol Tingkatkan Jaringan akan berjalan satu per satu melalui setiap situs pada jaringan, sekaligus lima sekali jalan, dan memastikan pembaruan basis data diterapkan."
 
-#: wp-admin/network/menu.php:46 wp-admin/network/upgrade.php:16
+#: wp-admin/network/menu.php:51 wp-admin/network/upgrade.php:16
 #: wp-admin/network/upgrade.php:43 wp-admin/network/upgrade.php:145
 msgid "Upgrade Network"
 msgstr "Tingkatkan Jaringan"
@@ -803,10 +803,6 @@ msgstr "Menambahkan baris kode berikut dalam wp-config.php (tepat sebelum <code>
 #: wp-admin/network/settings.php:461
 msgid "Language Settings"
 msgstr "Pengaturan Bahasa"
-
-#: wp-admin/network/settings.php:253
-msgid "Allow site administrators to add new users to their site via the \"Users &rarr; Add New\" page"
-msgstr "Izinkan administrator situs untuk menambahkan pengguna baru ke situs mereka via laman \"Pengguna &rarr; Tambahksn Baru\""
 
 #: wp-admin/network/settings.php:58
 msgid "Super admins can no longer be added on the Options screen. You must now go to the list of existing users on Network Admin > Users and click on Username or the Edit action link below that name. This goes to an Edit User page where you can check a box to grant super admin privileges."
@@ -929,14 +925,6 @@ msgstr "Dasbor membawa Anda ke Dasbor situs tersebut."
 msgid "An Edit link to a separate Edit Site screen."
 msgstr "Sebuah taut Sunting untuk layar Sunting Situs yang terpisah."
 
-#: wp-admin/network/sites.php:31
-msgid "Add New Site takes you to the screen for adding a new site to the network. You can search for a site by Name, ID number, or IP address. Screen Options allows you to choose how many sites to display on one page."
-msgstr "Tambah Situs Baru membawa Anda ke layar untuk menambahkan situs baru di jaringan. Anda juga dapat mencari sebuah situs berdasarkan Nama, nomor ID, atau alamat IP. Opsi Layar memungkinkan Anda untuk memilih banyaknya situs yang ditampilkan dalam satu halaman."
-
-#: wp-admin/network/site-users.php:336 wp-admin/network/user-new.php:161
-msgid "Add User"
-msgstr "Tambah Pengguna"
-
 #: wp-admin/network/user-new.php:55
 msgid "Cannot add user."
 msgstr "Tidak bisa menambahkan pengguna."
@@ -945,19 +933,19 @@ msgstr "Tidak bisa menambahkan pengguna."
 msgid "Add User will set up a new user account on the network and send that person an email with username and password."
 msgstr "Tambah Pengguna akan mengatur sebuah akun pengguna baru pada jaringan dan mengirimkannya sebuah email dengan nama pengguna dan kata sandinya."
 
-#: wp-admin/network/menu.php:41
+#: wp-admin/network/menu.php:46
 msgid "Updates"
 msgstr "Pembaruan"
 
-#: wp-admin/network/menu.php:111 wp-admin/network/settings.php:21
+#: wp-admin/network/menu.php:116 wp-admin/network/settings.php:21
 msgid "Network Settings"
 msgstr "Pengaturan Jaringan"
 
-#: wp-admin/network/menu.php:80
+#: wp-admin/network/menu.php:85
 msgid "Installed Themes"
 msgstr "Tema Terinstal"
 
-#: wp-admin/network/menu.php:52
+#: wp-admin/network/menu.php:57
 msgid "All Sites"
 msgstr "Semua Situs"
 
@@ -1058,10 +1046,6 @@ msgstr "Lengkapi informasi di bawah ini dan Anda akan dapat membuat sebuah jarin
 #: wp-admin/includes/network.php:188
 msgid "Welcome to the Network installation process!"
 msgstr "Selamat datang di proses instalasi Jaringan!"
-
-#: wp-admin/includes/network.php:161
-msgid "Error: The network could not be created."
-msgstr "EROR: Jaringan tidak dapat dibuat. "
 
 #: wp-admin/includes/network.php:146
 msgid "Once the network is created, you may reactivate your plugins."
@@ -1375,7 +1359,9 @@ msgstr "Pengguna baru akan diciptakan jika alamat email di atas tidak ada dalam 
 msgid "Admin Email"
 msgstr "Email Admin"
 
-#: wp-admin/network/site-new.php:299
+#: wp-admin/network/menu.php:58 wp-admin/network/site-new.php:182
+#: wp-admin/network/site-new.php:192 wp-admin/network/site-new.php:299
+#: wp-admin/network/sites.php:391
 msgid "Add Site"
 msgstr "Tambah Situs"
 
@@ -1426,10 +1412,6 @@ msgstr "Pendaftaran Email Terbatas"
 #: wp-admin/network/settings.php:258
 msgid "Banned Names"
 msgstr "Nama yang Dilarang"
-
-#: wp-admin/network/settings.php:251
-msgid "Add New Users"
-msgstr "Tambah Pengguna Baru"
 
 #: wp-admin/network/settings.php:239
 msgid "Registration notification"

@@ -1,0 +1,10 @@
+				@font-face {
+					font-family: 'humanst521bt';
+					src: url('/rssstumpang.com/wp-content/uploads/useanyfont/5674Humanst521BT.woff2') format('woff2'),
+						url('/rssstumpang.com/wp-content/uploads/useanyfont/5674Humanst521BT.woff') format('woff');
+					font-weight: 100; font-style: normal; font-display: auto;
+				}
+
+				.humanst521bt{font-family: 'humanst521bt' !important;}
+
+		

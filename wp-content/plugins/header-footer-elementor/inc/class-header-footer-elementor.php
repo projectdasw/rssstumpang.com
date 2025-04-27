@@ -129,6 +129,8 @@ class Header_Footer_Elementor {
 				add_action( 'admin_init', [ $this, 'get_plugin_version' ] );
 			}
 
+			// Filter to change Astra menu positon.
+			add_filter( 'astra_menu_priority', array( $this, 'update_admin_menu_position' ) );
 			// Scripts and styles.
 			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 
@@ -141,40 +143,18 @@ class Header_Footer_Elementor {
 
 			add_action( 'astra_notice_before_markup_header-footer-elementor-rating', [ $this, 'rating_notice_css' ] );
 
-			// BSF Analytics Tracker.
-			if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
-				require_once HFE_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
-			}
-
-			$bsf_analytics = BSF_Analytics_Loader::get_instance();
-
-			$bsf_analytics->set_entity(
-				[
-					'bsf' => [
-						'product_name'        => 'Ultimate Addons for Elementor',
-						'path'                => HFE_DIR . 'admin/bsf-analytics',
-						'author'              => 'Brainstorm Force',
-						'time_to_display'     => '+24 hours',
-						'deactivation_survey' => [
-							[
-								'id'                => 'deactivation-survey-header-footer-elementor', // 'deactivation-survey-<your-plugin-slug>'
-								'popup_logo'        => HFE_URL . 'assets/images/settings/logo.svg',
-								'plugin_slug'       => 'header-footer-elementor', // <your-plugin-slug>
-								'plugin_version'    => HFE_VER,
-								'popup_title'       => __( 'Quick Feedback', 'header-footer-elementor' ),
-								'support_url'       => 'https://ultimateelementor.com/contact/',
-								'popup_description' => __( 'If you have a moment, please share why you are deactivating Ultimate Addons for Elementor:', 'header-footer-elementor' ),
-								'show_on_screens'   => [ 'plugins' ],
-							],
-						],
-					],
-				]
-			);
-
-			if ( ! class_exists( 'HFE_Utm_Analytics' ) ) {
-				require_once HFE_DIR . 'inc/lib/class-hfe-utm-analytics.php';
-			}       
+			require_once HFE_DIR . 'inc/class-hfe-analytics.php';
+			     
 		}
+	}
+
+	/**
+	 * Update Astra's menu priority to show after Dashboard menu.
+	 *
+	 * @param int $menu_priority top level menu priority.
+	 */
+	public function update_admin_menu_position( $menu_priority ) {
+		return 2.1;
 	}
 
 	/**
@@ -202,8 +182,8 @@ class Header_Footer_Elementor {
 			exit();
 		}
 	}
-
-	/**
+	
+	/*
 	 * Render admin top bar
 	 */
 	private function render_admin_top_bar() {
@@ -653,7 +633,7 @@ class Header_Footer_Elementor {
 	 */
 	public static function get_header_content() {
 		$header_content = self::$elementor_instance->frontend->get_builder_content_for_display( get_hfe_header_id() );
-		echo $header_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $header_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped output is not rendered on frontend.
 	}
 
 	/**
@@ -663,7 +643,7 @@ class Header_Footer_Elementor {
 	 */
 	public static function get_footer_content() {
 		echo "<div class='footer-width-fixer'>";
-		echo self::$elementor_instance->frontend->get_builder_content_for_display( get_hfe_footer_id() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo self::$elementor_instance->frontend->get_builder_content_for_display( get_hfe_footer_id() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped output is not rendered on frontend.
 		echo '</div>';
 	}
 
@@ -674,7 +654,7 @@ class Header_Footer_Elementor {
 	 */
 	public static function get_before_footer_content() {
 		echo "<div class='footer-width-fixer'>";
-		echo self::$elementor_instance->frontend->get_builder_content_for_display( hfe_get_before_footer_id() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo self::$elementor_instance->frontend->get_builder_content_for_display( hfe_get_before_footer_id() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped output is not rendered on frontend.
 		echo '</div>';
 	}
 

@@ -124,7 +124,7 @@
 .premium-search__query-wrap {
   position: absolute;
   left: 0;
-  z-index: 3;
+  z-index: 6;
   width: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -161,8 +161,8 @@
   width: 100%;
 }
 .premium-search__query-wrap .slick-disabled {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  opacity: 0;
+  visibility: hidden;
 }
 .premium-search__posts-wrap {
   display: -webkit-flex;

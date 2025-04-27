@@ -2876,11 +2876,8 @@ class Premium_Pinterest_Feed extends Widget_Base {
 						continue;
 					}
 
-					// if( ! $settings['board_id'] ) {
-					// return;
-					// }
-
-					if ( $default && 1 < count( $settings['board_id'] ) && ! in_array( $feed['board_id'], $settings['board_id'], true ) ) {
+					// if ( $default && 1 < count( $settings['board_id'] ) && ! in_array( $feed['board_id'], $settings['board_id'], true ) ) {
+					if ( $default && $settings['board_id'] && ! in_array( $feed['board_id'], $settings['board_id'], true ) ) {
 						continue;
 					}
 
@@ -3274,8 +3271,10 @@ class Premium_Pinterest_Feed extends Widget_Base {
 				</span>
 			<?php endif; ?>
 
-			<?php if ( $pin_settings['date'] ) : ?>
-				<span class="premium-pinterest-feed__created-at"><?php echo esc_html( gmdate( $settings['date_format'], strtotime( $feed['created_at'] ) ) ); ?></span>
+			<?php if ( $pin_settings['date'] ) :
+				$p_date = ! empty( $feed['created_at'] ) ? strtotime( $feed['created_at'] ) : false;
+			?>
+				<span class="premium-pinterest-feed__created-at"><?php echo esc_html( wp_date( $settings['date_format'], $p_date ) ); ?></span>
 			<?php endif; ?>
 
 		</div>

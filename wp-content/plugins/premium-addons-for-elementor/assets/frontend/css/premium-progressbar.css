@@ -331,6 +331,7 @@
     -webkit-transform: rotate(-90deg) !important;
     -ms-transform: rotate(-90deg) !important;
     transform: rotate(-90deg) !important;
+    float: none !important;
     -webkit-transform-origin: 0;
     -ms-transform-origin: 0;
     transform-origin: 0;

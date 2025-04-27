@@ -28,6 +28,9 @@ RewriteRule .* - [E=Cache-Control:vary=%{ENV:LSCACHE_VARY_VALUE}+webp]
 RewriteCond %{HTTP_USER_AGENT} iPhone.*Version/(\d{2}).*Safari
 RewriteCond %1 >13
 RewriteRule .* - [E=Cache-Control:vary=%{ENV:LSCACHE_VARY_VALUE}+webp]
+RewriteCond %{HTTP_USER_AGENT} Firefox/([0-9]+)
+RewriteCond %1 >=65
+RewriteRule .* - [E=Cache-Control:vary=%{ENV:LSCACHE_VARY_VALUE}+webp]
 ### marker WEBP end ###
 
 ### marker DROPQS start ###
@@ -55,6 +58,7 @@ ExpiresByType image/jpeg A31557600
 ExpiresByType image/png A31557600
 ExpiresByType image/gif A31557600
 ExpiresByType image/webp A31557600
+ExpiresByType image/avif A31557600
 
 ExpiresByType video/ogg A31557600
 ExpiresByType audio/ogg A31557600

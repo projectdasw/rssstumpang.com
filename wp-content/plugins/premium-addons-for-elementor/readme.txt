@@ -3,9 +3,9 @@ Contributors: Leap13, Rimoun
 Tags: elementor, elementor addons, widgets, elementor elements, elementor templates
 Donate Link: https://premiumaddons.com/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme
 Requires at least: 5.0
-Tested Up To: 6.7.2
+Tested Up To: 6.8
 Requires PHP: 7.4
-Stable Tag: 4.10.89
+Stable Tag: 4.11.3
 License: GPL v3.0
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -126,7 +126,7 @@ Each widget and addon has been tested on different screen sizes, mobile devices,
 * [**Tooltips Global Addon**](https://premiumaddons.com/elementor-tooltip-global-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(FREE)*: Add icon, image, Lottie animation or Elementor template as a tooltip for any Elementor container element.
 * [**Badge Global Addon**](https://premiumaddons.com/elementor-badge-global-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Add an icon, image, Lottie animation, or SVG blob shape badge to any container.
 * [**Animated Blob Generator**](https://premiumaddons.com/elementor-animated-blob-generator/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Add multiple animated blob layers to your containers with a wide range of smart customization options.
-* [**Lottie Animations Container Addon**](https://premiumaddons.com/elementor-lottie-animations-section-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Add multiple Lottie Animations easily to any container with allot of customization and interactivity options.
+* [**Lottie Animations Container Addon**](https://premiumaddons.com/elementor-lottie-animations-section-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Add multiple Lottie Animations easily to any container with a lot of customization and interactivity options.
 * [**Parallax Container Addon**](https://premiumaddons.com/elementor-parallax-container-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: The only Parallax Container Addon that can be enabled for columns with freehand design experience and many styles to choose from.
 * [**Particles Container Addon**](https://premiumaddons.com/particles-section-addon-for-elementor-page-builder/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Create eye-catching particles background with many customization options.
 * [**Animated Gradient/Column Addon**](https://premiumaddons.com/animated-section-gradients-for-elementor-page-builder/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Subtle animated gradients effect that makes your backgrounds attractive.
@@ -236,6 +236,40 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 14. Premium Progress Bar Widget
 
 == Changelog ==
+
+= 4.11.3 =
+
+- Tweak: Added Fill Color Speed option in SVG Draw widget.
+- Fixed: Fatal error in Pinterest Feed widget when Board ID option is empty.
+- Fixed: HTML markup issue in Heading widget.
+- Fixed: Tooltips addon not working when Position control value has spaces in it.
+
+= 4.11.2 =
+
+- Tweak: Translate date based on site's current language in Pinterest and TikTok Feed widgets.
+
+= 4.11.1 =
+
+- Tweak: Premium Blog HTML markup improved for better accessibility.
+- Fixed: Templates not showing in Mega Menu when Hide Mobile Menu option is enabled.
+- Fixed: Carousel arrows not showing in AJAX Search widget.
+
+= 4.11.0 =
+
+- Tweak: Added Delay control in Lottie animation widget.
+- Tweak: Vertical Scroll widget behavior on Elementor editor.
+- Tweak: Removed `nofollow` link attribute for links in Google Maps widget markers.
+- Tweak: Removed Frontpage option from Static Page in Display Conditions addon.
+- Tweak: Action control changed to show when Query is set to Posts in AJAX Search widget.
+
+= 4.10.90 =
+
+- Tweak: Compatibility with Google Maps AdvancedMarkers API in Google Maps widget.
+- Tweak: Code improvements for better performance.
+- Tweak: Added Maximum Height option for Quick View in Woo Products widget.
+- Fixed: Elementor templates in Mega Menu widget can't be edited.
+- Fixed: Stock message in Woo Mini Cart widget can't be translated.
+- Fixed: Styling issue in Progress Bar widget on small screens.
 
 = 4.10.89 =
 

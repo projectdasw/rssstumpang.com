@@ -466,6 +466,18 @@ class Premium_Maps extends Widget_Base {
 		);
 
 		$this->add_control(
+			'premium_map_id',
+			array(
+				'label' => __('Map ID', 'premium-addons-for-elementor'),
+				'type' => Controls_Manager::TEXT,
+				'description' => sprintf(
+					esc_html__('Get the Google Map ID from %s. You can leave it empty, but this will use the old Google Maps API.', 'premium-addons-for-elementor'),
+					'<a href="https://developers.google.com/maps/documentation/javascript/map-ids/get-map-id" target="_blank">' . esc_html__('here', 'premium-addons-for-elementor') . '</a>'
+				),
+			)
+		);
+
+		$this->add_control(
 			'premium_maps_map_type',
 			array(
 				'label'   => __( 'Map Type', 'premium-addons-for-elementor' ),
@@ -1192,6 +1204,7 @@ class Premium_Maps extends Widget_Base {
 		}
 
 		$map_settings = array(
+			'mapId'             => $settings['premium_map_id'],
 			'zoom'              => $settings['premium_maps_map_zoom']['size'],
 			'maptype'           => $settings['premium_maps_map_type'],
 			'streetViewControl' => $street_view,
@@ -1395,7 +1408,7 @@ class Premium_Maps extends Widget_Base {
 								<div class='premium-maps-info-website maps-info-item'>
 									<i class='eicon-globe' aria-hidden='true'></i>
 									<p>
-										<a href='<?php echo esc_url( $pin['pin_website'] ); ?>' target='_blank' rel='nofollow'>
+										<a href='<?php echo esc_url( $pin['pin_website'] ); ?>' target='_blank'>
 											<?php echo esc_url( $pin['pin_website'] ); ?>
 										</a>
 									</p>
