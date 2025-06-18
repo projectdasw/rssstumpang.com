@@ -26,7 +26,7 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
+        'hostname'     => '172.12.12.50',
         'username'     => 'root',
         'password'     => '@Rssswebserver2025',
         'database'     => 'rsss_db',
