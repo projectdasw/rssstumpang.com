@@ -26,9 +26,9 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => 'root',
-        'password'     => '@Rssswebserver2025',
+        'hostname'     => '172.12.12.50',
+        'username'     => 'rsss-remotedb',
+        'password'     => '@Rsssremotedb',
         'database'     => 'rsss_db',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',

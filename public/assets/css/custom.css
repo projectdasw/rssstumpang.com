@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* CARD CUSTOM CSS */
+.custom-overlay{
+    background-image: url('/assets/image/bg-card.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.custom-acc-setting{
+    background-color: rgb(206, 241, 255);
+}
+
+.custom-acc-setting:hover{
+    background-color: rgb(35, 156, 255);
+    color: #fff;
+}
+
+.custom-img-acc{
+    width: 30px;
+    border-radius: 50px;
+}
