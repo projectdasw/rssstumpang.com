@@ -1,14 +1,14 @@
 <?php
     namespace App\Controllers;
 
-    class Home extends BaseController
+    class Login extends BaseController
     {
         public function index()
         {
             $data = [
-                'title' => 'Rumah Sakit Sumber Sentosa Tumpang Malang'
+                'title' => 'Login - Rumah Sakit Sumber Sentosa Tumpang Malang'
             ];
-            return view('landing_pages', $data);
+            return view('login/index', $data);
 
             // Cache Setup
             $this->cachePage($n);
