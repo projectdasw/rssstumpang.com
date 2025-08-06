@@ -1,4 +1,4 @@
-<?= $this->extend('layout/templates'); ?>
+<?= $this->extend('layout/landing_templates'); ?>
 
 <?= $this->section('content'); ?>
     <p>Halaman landing Pages</p>
