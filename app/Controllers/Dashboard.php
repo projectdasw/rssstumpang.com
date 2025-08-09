@@ -12,20 +12,8 @@
 
             $logModel = new UserLogModel();
 
-            // Ambil keyword pencarian
-            $keyword = $this->request->getGet('q');
-            $perPage = 10;
-
             // Query builder dasar
-            $builder = $logModel->orderBy('tanggal', 'DESC')->orderBy('waktu', 'DESC');
-
-            if ($keyword) {
-                $builder->like('nama_akun', $keyword)
-                        ->orLike('keterangan', $keyword);
-            }
-
-            $aktivitas = $builder->paginate($perPage, 'aktivitas');
-            $pager     = $logModel->pager;
+            $aktivitas = $logModel->orderBy('tanggal', 'DESC')->orderBy('waktu', 'DESC')->findAll();
 
             $data = [
                 'title'         => 'Dashboard - Rumah Sakit Sumber Sentosa Tumpang Malang',
@@ -34,11 +22,38 @@
                 'user'          => session()->get('nama_akun'),
                 'role'          => session()->get('role'),
                 'aktivitas'     => $aktivitas,
-                'pager'         => $pager,
-                'keyword'       => $keyword,
             ];
 
             return view('dashboard/index', $data);
+        }
+
+        public function fetchAktivitas() {
+            $request = service('request');
+            $model = new \App\Models\UserLogModel();
+
+            $keyword = $request->getGet('search');
+            $page = (int) $request->getGet('page') ?: 1;
+            $perPage = 5;
+
+            $builder = $model;
+
+            if ($keyword) {
+                $builder = $builder->like('nama_akun', $keyword)
+                                ->orLike('aktivitas', $keyword)
+                                ->orLike('keterangan', $keyword);
+            }
+
+            $logs = $builder->orderBy('tanggal', 'DESC')
+                            ->orderBy('waktu', 'DESC')
+                            ->paginate($perPage, 'group1', $page);
+
+            $pager = $model->pager;
+
+            return view('dashboard/aktivitas_list', [
+                'aktivitas' => $logs,
+                'pager' => $pager,
+                'currentPage' => $page
+            ]);
         }
     }
 ?>

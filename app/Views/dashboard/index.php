@@ -142,15 +142,6 @@
                         <h6 class="m-0">Aktivitas Pengguna</h6>
                     </div>
                     <div class="card-body p-2">
-                        <form method="get" class="mb-3">
-    <div class="input-group">
-        <input type="text" name="q" value="<?= esc($keyword) ?>" class="form-control" placeholder="Cari aktivitas...">
-        <button type="submit" class="btn btn-primary">
-            <i class="fa fa-search"></i> Cari
-        </button>
-    </div>
-</form>
-
                         <ul class="list-group list-group-flush">
                             <?php if (!empty($aktivitas)): ?>
                                 <?php foreach($aktivitas as $log): ?>
@@ -177,10 +168,6 @@
                                 </li>
                             <?php endif; ?>
                         </ul>
-                        <div class="mt-3">
-    <?= $pager->links('aktivitas', 'default_full') ?>
-</div>
-
                     </div>
                 </div>
             </div>
