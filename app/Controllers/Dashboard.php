@@ -12,48 +12,16 @@
 
             $logModel = new UserLogModel();
 
-            // Query builder dasar
-            $aktivitas = $logModel->orderBy('tanggal', 'DESC')->orderBy('waktu', 'DESC')->findAll();
-
             $data = [
                 'title'         => 'Dashboard - Rumah Sakit Sumber Sentosa Tumpang Malang',
                 'content_title' => 'Dashboard',
                 'icon'          => 'fa-solid fa-house',
                 'user'          => session()->get('nama_akun'),
                 'role'          => session()->get('role'),
-                'aktivitas'     => $aktivitas,
+                'log_akun'      => $logModel->orderBy('tanggal', 'DESC')->orderBy('waktu', 'DESC')->paginate(5),
             ];
 
             return view('dashboard/index', $data);
-        }
-
-        public function fetchAktivitas() {
-            $request = service('request');
-            $model = new \App\Models\UserLogModel();
-
-            $keyword = $request->getGet('search');
-            $page = (int) $request->getGet('page') ?: 1;
-            $perPage = 5;
-
-            $builder = $model;
-
-            if ($keyword) {
-                $builder = $builder->like('nama_akun', $keyword)
-                                ->orLike('aktivitas', $keyword)
-                                ->orLike('keterangan', $keyword);
-            }
-
-            $logs = $builder->orderBy('tanggal', 'DESC')
-                            ->orderBy('waktu', 'DESC')
-                            ->paginate($perPage, 'group1', $page);
-
-            $pager = $model->pager;
-
-            return view('dashboard/aktivitas_list', [
-                'aktivitas' => $logs,
-                'pager' => $pager,
-                'currentPage' => $page
-            ]);
         }
     }
 ?>

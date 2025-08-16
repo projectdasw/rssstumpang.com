@@ -18,9 +18,6 @@
             ];
             
             return view('login/index', $data);
-
-            // Cache Setup
-            $this->cachePage($n);
         }
 
         public function processLogin()
@@ -69,7 +66,7 @@
             $session = session();
             $aktivitasModel = new UserLogModel();
 
-            $session->setFlashdata('logout', 'Anda berhasil Log Out');
+            $session->setFlashdata('success', 'Anda berhasil Log Out');
             $aktivitasModel->insert([
                 'id_aktivitas' => Uuid::uuid4()->toString(),
                 'tanggal'      => date('Y-m-d'),

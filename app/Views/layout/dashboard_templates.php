@@ -24,37 +24,45 @@
             </div>
             
             <div class="row">
-                <div class="col-2 p-3">
-                    <div class="card text-center p-2 mb-3">
-                        <img src="<?= base_url('assets/img/user.png') ?>" class="card-img-top w-50 mx-auto shadow-lg bg-body-tertiary rounded-circle" alt="image">
-                        <div class="card-body p-0 mt-2">
-                            <h5 class="card-title">
-                                <strong><?= $user; ?></strong>
-                                <small class="badge text-bg-danger mt-2"><?= $role; ?></small>
-                            </h5>
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-sm btn-success" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" data-bs-title="Pengaturan Akun">
-                                    <i class="fa-solid fa-user-gear"></i>
-                                </button>
-                                <a href="<?= base_url('login/logout') ?>" onclick="return confirmLogout(event);"
-                                    class="btn btn-sm btn-danger" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" data-bs-title="Logout">
-                                    <i class="fa-solid fa-right-from-bracket"></i>
-                                </a>
+                <div class="col-2 p-0">
+                    <div class="container-fluid p-3 sticky-top">
+                        <div class="card text-center p-2 mb-3">
+                            <img src="<?= base_url('assets/img/user.webp') ?>" class="card-img-top w-50 mx-auto shadow-lg bg-body-tertiary rounded-circle" alt="image">
+                            <div class="card-body p-0 mt-2">
+                                <div class="card-title d-flex flex-column align-items-center">
+                                    <h4 class="m-0"><?= $user; ?></h4>
+                                    <span class="badge text-bg-danger fs-6 mt-2"><?= $role; ?></span>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-sm btn-success" bs-tooltips="tooltip"
+                                            data-bs-placement="bottom" data-bs-title="Pengaturan Akun">
+                                        <i class="fa-solid fa-user-gear"></i>
+                                    </button>
+                                    <a href="<?= base_url('/logout') ?>" class="btn btn-sm btn-danger"
+                                        onclick="return confirmLogout(event);" data-href="<?= base_url('/logout') ?>"
+                                        bs-tooltips="tooltip" data-bs-placement="bottom" data-bs-title="Logout">
+                                        <i class="fa-solid fa-right-from-bracket"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion accordion-flush" id="sideMenu">
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header">
-                                <button class="accordion-button collapsed p-2" type="button" data-bs-toggle="collapse" data-bs-target="#media_postingan" aria-expanded="false" aria-controls="media_postingan">
-                                    <i class="fa-solid fa-hashtag me-2"></i> 
-                                    <small>Media & Postingan</small>
-                                </button>
-                            </div>
-                            <div id="media_postingan" class="accordion-collapse collapse" data-bs-parent="#sideMenu">
-                                <div class="accordion-body p-0">
+                        <div class="list-group">
+                            <a href="<?= base_url('/dashboard') ?>" class="list-group-item list-group-item-action list-group-item-primary border-0 p-2">
+                                <i class="fa-solid fa-house me-1"></i>
+                                <small>Beranda</small>
+                            </a>
+                            <a class="list-group-item list-group-item-action list-group-item-primary border-0 p-2" data-bs-toggle="collapse"
+                                href="#media_postingan" role="button" aria-expanded="false" aria-controls="media_postingan">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>
+                                        <i class="fa-solid fa-hashtag me-1"></i> 
+                                        <small>Media & Postingan</small>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                            </a>
+                            <div class="collapse" id="media_postingan">
+                                <div class="card card-body p-0 border-0">
                                     <div class="list-group rounded-0">
                                         <a href="#" class="list-group-item list-group-item-action list-group-item-success p-2">
                                             <small>Media Foto/Video</small>
@@ -74,16 +82,18 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header">
-                                <button class="accordion-button collapsed p-2" type="button" data-bs-toggle="collapse" data-bs-target="#marketing" aria-expanded="false" aria-controls="marketing">
-                                    <i class="fa-solid fa-bullseye me-2"></i>
-                                    <small>Marketing</small>
-                                </button>
-                            </div>
-                            <div id="marketing" class="accordion-collapse collapse" data-bs-parent="#sideMenu">
-                                <div class="accordion-body p-0">
+                            <a class="list-group-item list-group-item-action list-group-item-primary border-0 p-2" data-bs-toggle="collapse"
+                                href="#marketing" role="button" aria-expanded="false" aria-controls="marketing">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>
+                                        <i class="fa-solid fa-bullseye me-1"></i>
+                                        <small>Marketing</small>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                            </a>
+                            <div class="collapse" id="marketing">
+                                <div class="card card-body p-0 border-0">
                                     <div class="list-group rounded-0">
                                         <a href="#" class="list-group-item list-group-item-action list-group-item-success p-2">
                                             <small>Kritik & Saran</small>
@@ -97,18 +107,20 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <div class="accordion-header">
-                                <button class="accordion-button collapsed p-2" type="button" data-bs-toggle="collapse" data-bs-target="#data_akun" aria-expanded="false" aria-controls="data_akun">
-                                    <i class="fa-solid fa-users-gear me-2"></i>
-                                    <small>Akun & Aktivitas</small>
-                                </button>
-                            </div>
-                            <div id="data_akun" class="accordion-collapse collapse" data-bs-parent="#sideMenu">
-                                <div class="accordion-body p-0">
+                            <a class="list-group-item list-group-item-action list-group-item-primary border-0 p-2" data-bs-toggle="collapse"
+                                href="#akun_aktivitas" role="button" aria-expanded="false" aria-controls="akun_aktivitas">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>
+                                        <i class="fa-solid fa-users-gear me-1"></i>
+                                        <small>Akun & Aktivitas</small>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                            </a>
+                            <div class="collapse" id="akun_aktivitas">
+                                <div class="card card-body p-0 border-0">
                                     <div class="list-group rounded-0">
-                                        <a href="#" class="list-group-item list-group-item-action list-group-item-success p-2">
+                                        <a href="<?= base_url('/data_akun') ?>" class="list-group-item list-group-item-action list-group-item-success p-2">
                                             <small>Data Akun Pengguna</small>
                                         </a>
                                         <a href="#" class="list-group-item list-group-item-action list-group-item-success p-2">
@@ -121,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col-10 p-0">
-                    <nav class="container-fluid d-flex flex-row align-items-center p-2">
+                    <nav class="container-fluid d-flex flex-row align-items-center p-2 sticky-top" style="background-color: #fff;">
                         <button class="btn btn-outline-primary me-2 d-none" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
                             <i class="fa-solid fa-bars me-1"></i>
@@ -135,7 +147,9 @@
                             </div>
                         </div>
                     </nav>
-                    <?= $this->renderSection('dashboard_content'); ?>
+                    <div class="container d-flex flex-column bg-light p-3 rounded-4">
+                        <?= $this->renderSection('dashboard_content'); ?>
+                    </div>
                 </div>
             </div>
         </div>

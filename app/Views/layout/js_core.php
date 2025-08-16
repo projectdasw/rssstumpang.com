@@ -57,6 +57,20 @@
             </script>
         <?php endif; ?>
 
+        <?php if (session()->getFlashdata('success')) : ?>
+            <script>
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 5000,
+                    timerProgressBar: true,
+                    icon: 'success',
+                    title: '<?= session()->getFlashdata('success') ?>'
+                });
+            </script>
+        <?php endif; ?>
+
         <?php if (session()->getFlashdata('info')) : ?>
             <script>
                 Swal.fire({
@@ -75,6 +89,8 @@
         <script>
             function confirmLogout(e) {
                 e.preventDefault();
+                const logoutUrl = e.currentTarget.getAttribute('data-href');
+
                 Swal.fire({
                     title: 'Yakin ingin logout?',
                     icon: 'warning',
@@ -83,7 +99,7 @@
                     confirmButtonText: `
                         <i class="fa-solid fa-check"></i>
                         <span>Ya, Logout</span>
-                        `,
+                    `,
                     cancelButtonColor: '#01a109ff',
                     cancelButtonText: `
                         <i class="fa-solid fa-xmark"></i>
@@ -91,27 +107,44 @@
                     `
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = e.target.href;
+                        window.location.href = logoutUrl;
                     }
                 });
 
-                return false; // Prevent default form submission
+                return false;
             }
         </script>
 
-        <?php if (session()->getFlashdata('logout')) : ?>
-            <script>
-                Swal.fire({
-                    toast: true,
-                    position: 'top-end',
-                    icon: 'success',
-                    title: '<?= session()->getFlashdata('logout') ?>',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                });
-            </script>
-        <?php endif; ?>
+    <!-- SweetAlert2 Delete Confirmation (FOR ALL FORM) -->
+     <script>
+        function confirmDelete(e) {
+            e.preventDefault();
+            const deleteUrl = e.currentTarget.getAttribute('data-href');
+
+            Swal.fire({
+                title: 'Yakin ingin menghapus akun ini?',
+                text: "Data yang dihapus tidak dapat dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: `
+                    <i class="fa-solid fa-check"></i>
+                    <span>Ya, Hapus</span>
+                `,
+                cancelButtonText: `
+                    <i class="fa-solid fa-xmark"></i>
+                    <span>Batal</span>
+                `
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = deleteUrl;
+                }
+            });
+
+            return false;
+        }
+     </script>
 
     <!--  Bootstrap JS -->
     <script>
@@ -137,7 +170,7 @@
         })()
         // BOOTSTRAP FORM VALIDATION
 
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipTriggerList = document.querySelectorAll('[bs-tooltips="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
         // Show/Hide Password Field
