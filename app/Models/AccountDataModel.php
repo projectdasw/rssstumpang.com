@@ -7,7 +7,7 @@ class AccountDataModel extends Model
 {
     protected $table      = 'users_login';
     protected $primaryKey = 'id_user';
-    protected $allowedFields = ['id_user', 'nama_lengkap', 'username', 'password', 'role', 'last_active', 'created_by', 'updated_by'];
+    protected $allowedFields = ['id_user', 'nama_lengkap', 'username', 'password', 'role', 'last_active', 'created_by', 'updated_by', 'disabled_at', 'disabled_by'];
     protected $useAutoIncrement = false;
     protected $useTimestamps = true;
 
